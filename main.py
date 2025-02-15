@@ -5,25 +5,27 @@ def main():
     # ==============================
     # Painel de Configuração Inicial
     # ==============================
-    # Defina o modo de jogo desejado:
+    # Defina o modo de jogo desejado (como string):
     # "1": Humano vs Bot
     # "2": Bot vs Bot
     # "3": Humano vs Humano
-    # "4": Humano vs IA
-    # "5": IA vs Bot
-    # "6": IA vs IA
-    mode = "5"  # Altere para o modo desejado
+    # "4": Humano vs IA (turn-based)
+    # "5": IA (turn-based) vs Bot
+    # "6": IA (turn-based) vs IA (turn-based)
+    # "7": Humano vs Global AI
+    # "8": Global AI vs Bot
+    # "9": Global AI vs Global AI
+    mode = "8" 
 
     # Defina a pontuação alvo (ex.: 1500 ou 2000)
     target_score = 1500
 
     # Defina a quantidade de partidas a serem jogadas
-    num_games = 300 # Exemplo: 5 partidas
+    num_games = 500  # Por exemplo, 3 partidas
 
     # Configuração dos jogadores (definidos no painel)
-    # Esses valores serão usados para criar novas instâncias de jogadores para cada partida.
     if mode == "1":
-        player1_name = "Alice"   # Jogador humano
+        player1_name = "Alice"
         player1_type = "human"
         player2_name = "Bot"
         player2_type = "bot"
@@ -52,24 +54,40 @@ def main():
         player1_type = "ai"
         player2_name = "IA 2"
         player2_type = "ai"
+    elif mode == "7":
+        player1_name = "Alice"
+        player1_type = "human"
+        player2_name = "Global AI"
+        player2_type = "global_ai"
+    elif mode == "8":
+        player1_name = "Global AI"
+        player1_type = "global_ai"
+        player2_name = "Bot"
+        player2_type = "bot"
+    elif mode == "9":
+        player1_name = "Global AI"
+        player1_type = "global_ai"
+        player2_name = "IA"
+        player2_type = "ai"
+    elif mode == "10":
+        player1_name = "Global AI 1"
+        player1_type = "global_ai"
+        player2_name = "Global AI 2"
+        player2_type = "global_ai"
     else:
         print("Modo de jogo inválido. Encerrando.")
         return
 
-    # Placar: dicionário para contar vitórias
     scoreboard = {player1_name: 0, player2_name: 0}
 
-    # Loop para jogar num_games partidas
     for game_num in range(1, num_games + 1):
         print(f"\n\n=== Iniciando Partida {game_num} de {num_games} ===")
-        # Cria novas instâncias de jogadores para cada partida (pontuação reiniciada)
         player1 = controller.Player(player1_name, player_type=player1_type)
         player2 = controller.Player(player2_name, player_type=player2_type)
         game_controller = controller.GameController(player1, player2, target_score)
-        winner = game_controller.start()  # Retorna o nome do vencedor
+        winner = game_controller.start()
         scoreboard[winner] += 1
 
-    # Exibe o placar final
     print("\n\n=== Placar Final ===")
     for name, wins in scoreboard.items():
         print(f"{name}: {wins} vitória(s)")

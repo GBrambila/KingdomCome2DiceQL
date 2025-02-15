@@ -108,7 +108,7 @@ class DQNAgent:
 
 
 # --- Loop de Treinamento ---
-def train(num_episodes=1000, batch_size=64, target_update=1000, buffer_capacity=10000):
+def train(num_episodes=15000, batch_size=64, target_update=1000, buffer_capacity=10000):
     env = DiceTurnEnv()  # ambiente com pontuação inicial zero
     input_dim = 9
     output_dim = 128
