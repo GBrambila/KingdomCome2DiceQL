@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf6ba2c0-81e1-4840-9ce3-72a1d93e5ed0" name="Changes" comment="Separei em varíos scripts para deixar mais modular e decidi usar uma otimização baseada em DQN híbrido com mascaramento de ações ao invez de Q Learning">
-      <change afterPath="$PROJECT_DIR$/.idea/KingdomCome2DiceQL.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global_env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train_global_ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_ai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dice_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/global_env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jogo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_ai.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_global_ai.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.controller.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_ai.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_global_ai.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train_ia.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.controller.executor": "Run",
+    "Python.dice_env.executor": "Debug",
+    "Python.main.executor": "Run",
+    "Python.train_ai.executor": "Run",
+    "Python.train_global_ai.executor": "Run",
+    "Python.train_ia.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -105,6 +104,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Separei em varíos scripts para deixar mais modular e decidi usar uma otimização baseada em DQN híbrido com mascaramento de ações ao invez de Q Learning" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dice_env.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="info.get('action')" language="Python" />
